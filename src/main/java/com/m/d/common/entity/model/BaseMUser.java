@@ -85,14 +85,6 @@ public abstract class BaseMUser<M extends BaseMUser<M>> extends JModel<M> implem
 		return get("id");
 	}
 
-	public void setUserName(java.lang.String userName) {
-		set("user_name", userName);
-	}
-
-	public java.lang.String getUserName() {
-		return get("user_name");
-	}
-
 	public void setUserNum(java.lang.String userNum) {
 		set("user_num", userNum);
 	}
@@ -107,6 +99,14 @@ public abstract class BaseMUser<M extends BaseMUser<M>> extends JModel<M> implem
 
 	public java.lang.String getPwd() {
 		return get("pwd");
+	}
+
+	public void setUserName(java.lang.String userName) {
+		set("user_name", userName);
+	}
+
+	public java.lang.String getUserName() {
+		return get("user_name");
 	}
 
 }
