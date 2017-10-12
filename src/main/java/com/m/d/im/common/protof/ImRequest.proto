@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_package = "im.common.protof";
+option java_outer_classname = "RequestModel";
+
+message ImRequest{
+    	int32 handler = 1;
+	int32 code = 2;
+	string uniqueOne = 3;
+	string uniqueTwo = 4;
+	string time = 5;
+	string data = 6;
+}
+
