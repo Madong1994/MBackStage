@@ -4,7 +4,7 @@ public class Generator {
 
 	public static void main(String[] args) {
 		
-		String modelPackage = "com.m.im.common";
+		String modelPackage = "com.m.d.common";
 		
 		String dbHost = "127.0.0.1";
 		String dbName = "mchart";

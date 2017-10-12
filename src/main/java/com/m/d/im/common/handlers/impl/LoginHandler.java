@@ -14,6 +14,7 @@ import com.m.d.im.common.util.ResponseCode;
 import com.m.d.im.common.util.annotation.IMInterceptor;
 import com.m.d.im.common.util.annotation.IMRequest;
 import com.m.d.im.common.util.tool.*;
+import com.m.d.service.UserQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tio.core.Aio;
@@ -42,7 +43,7 @@ public class LoginHandler implements BaseHandler {
             log.info(e.getMessage());
             e.printStackTrace();
         }
-        MUser muser = null;//UserQuery.me().findUserByNumPwd(user.getUserNum(),pwd);
+        MUser muser = UserQuery.me().findUserByNumPwd(user.getUserNum(),pwd);
         if(muser == null){
             //没有注册
             ResultMsg resultMsg = new ResultMsg();
