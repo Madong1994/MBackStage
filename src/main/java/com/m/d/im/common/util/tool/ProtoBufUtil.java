@@ -9,8 +9,8 @@ import com.m.d.im.common.protof.ResponseModel;
 public class ProtoBufUtil {
     public static ResponseModel.ImResponse responseModelFactory(int code, int handle, String uniqueOne, String uniqueTwo, String time, String data){
         ResponseModel.ImResponse.Builder builder = ResponseModel.ImResponse.newBuilder();
-        builder.setCode(0);//0表示成功，1表示失败
-        builder.setHandler(0);//0表示响应，1表示请求
+        builder.setCode(code);//0表示成功，1表示失败:now :code表示指令
+        builder.setHandler(handle);//0表示响应，1表示请求
         builder.setUniqueOne(uniqueOne);
         builder.setUniqueTwo(uniqueTwo);
         builder.setTime(time);

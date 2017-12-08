@@ -16,4 +16,5 @@ package com.m.d.im.common.util;
  */
 public interface ResponseCode {
     public static int RES_LOGIN = 0;//登录响应
+    public static int RES_FRENDS = 1;//获取好友响应
 }

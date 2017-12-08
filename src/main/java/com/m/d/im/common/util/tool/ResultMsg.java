@@ -4,6 +4,15 @@ package com.m.d.im.common.util.tool;
 public class ResultMsg {
     private int resultCode;
     private String resultMsg;
+    private String object;
+
+    public String getObject() {
+        return object;
+    }
+
+    public void setObject(String object) {
+        this.object = object;
+    }
 
     public int getResultCode() {
         return resultCode;

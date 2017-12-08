@@ -1,6 +1,7 @@
 package com.m.d.im.common.handlers.impl;
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.m.d.common.entity.MUser;
 import com.m.d.im.common.IMPacket;
@@ -53,10 +54,18 @@ public class LoginHandler implements BaseHandler {
             IMSend.send(channelContext,imResponse);
             return null;
         }
+
+        User ruser = new User();
+        ruser.setUserName(muser.getUserName());
+        ruser.setUserNum(muser.getUserNum());
+        ruser.setPwd(muser.getPwd());
+
         //绑定tio
         Aio.bindUser(channelContext,user.getUserNum());
         ResultMsg resultMsg = new ResultMsg();
         resultMsg.setResultCode(ResultMsgCode.LOGIN_SCUSSE);
+        String userStr = JSON.toJSONString(ruser);
+        resultMsg.setObject(userStr);
         resultMsg.setResultMsg("登录成功");
         ResponseModel.ImResponse imResponse = ProtoBufUtil.responseModelFactory(ResponseCode.RES_LOGIN,HandlerCode.RESPONSE,"0","0", System.currentTimeMillis()+"", JSONObject.toJSONString(resultMsg));
         IMSend.send(channelContext,imResponse);

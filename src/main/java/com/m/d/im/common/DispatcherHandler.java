@@ -40,7 +40,7 @@ public class DispatcherHandler {
             for (Class<?> impl : BaseHandleImplClassList) {
                 IMRequest annotation = impl.getAnnotation(IMRequest.class);
                 IMInterceptor interceptor = impl.getAnnotation(IMInterceptor.class);
-                if (null != annotation) {
+                if (null != annotation && annotation.requestCode() == imRequest.getCode()) {
                     try {
                         if(interceptor != null){
                             //使用注解拦截器
