@@ -18,4 +18,6 @@ public interface RequestCode {
      int LOGIN = 0;//登录
 
      int FRENDS = 1;//好友列表
+
+     int SENMSG = 10;
 }

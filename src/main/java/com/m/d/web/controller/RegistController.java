@@ -22,11 +22,11 @@ import java.security.NoSuchAlgorithmException;
 public class RegistController extends Controller{
     public void index(){
         MUser user = new MUser();
-        user.setUserName("系统消息");
-        user.setUserNum("100000");
+        user.setUserName("测试好友1");
+        user.setUserNum("100001");
 
         try {
-            user.setPwd(MD5Util.EncoderByMD5("mim100000"));
+            user.setPwd(MD5Util.EncoderByMD5("100001"));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {

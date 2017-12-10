@@ -10,6 +10,7 @@ import com.m.d.im.common.handlers.BaseHandler;
 import com.m.d.im.common.protof.RequestModel;
 import com.m.d.im.common.protof.ResponseModel;
 import com.m.d.im.common.util.HandlerCode;
+import com.m.d.im.common.util.IMcacheMap;
 import com.m.d.im.common.util.RequestCode;
 import com.m.d.im.common.util.ResponseCode;
 import com.m.d.im.common.util.annotation.IMInterceptor;
@@ -62,6 +63,8 @@ public class LoginHandler implements BaseHandler {
 
         //绑定tio
         Aio.bindUser(channelContext,user.getUserNum());
+        IMcacheMap.cacheMap.put(user.getUserNum(),channelContext);
+        ChannelContext<Object, IMPacket, Object> receiverChannel = (ChannelContext<Object, IMPacket, Object>) IMcacheMap.cacheMap.get(user.getUserNum());
         ResultMsg resultMsg = new ResultMsg();
         resultMsg.setResultCode(ResultMsgCode.LOGIN_SCUSSE);
         String userStr = JSON.toJSONString(ruser);
