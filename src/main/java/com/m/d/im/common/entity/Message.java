@@ -13,6 +13,15 @@ public class Message {
     private String sender;
     private String msgType;
     private String receiver;
+    private String sendTime;
+
+    public String getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
+    }
 
     public String getReceiver() {
         return receiver;
